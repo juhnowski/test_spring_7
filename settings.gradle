@@ -1,0 +1,12 @@
+rootProject.name = 'test-spring-7'
+
+include 'test01:hello-world'
+
+println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
+
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.exists()
+    assert project.buildFile.isFile()
+}

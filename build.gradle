@@ -1,0 +1,28 @@
+ext {
+    springVersion = '7.0.0-SNAPSHOT'
+    bootVersion = '4.0.0-SNAPSHOT'
+
+    spring = [
+            context: "org.springframework:spring-context:$springVersion"
+    ]
+
+    boot = [
+            springBootPlugin: "org.springframework.boot:spring-boot-gradle-plugin:$bootVersion",
+            starter         : "org.springframework.boot:spring-boot-starter:$bootVersion",
+            actuator        : "org.springframework.boot:spring-boot-starter-actuator:$bootVersion"
+    ]
+
+    subprojects {
+        version '1.0-SNAPSHOT'
+
+        repositories {
+            mavenLocal()
+            mavenCentral()
+        }
+
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}
