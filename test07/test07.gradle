@@ -1,5 +1,5 @@
 subprojects {
-    group 'juhnowski.test03'
+    group 'juhnowski.test07'
     apply plugin: 'java'
 
     dependencies {

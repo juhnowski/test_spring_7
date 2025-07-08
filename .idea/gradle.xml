@@ -27,6 +27,8 @@
             <option value="$PROJECT_DIR$/test07/bean-factory" />
             <option value="$PROJECT_DIR$/test08" />
             <option value="$PROJECT_DIR$/test08/simple-types" />
+            <option value="$PROJECT_DIR$/test09" />
+            <option value="$PROJECT_DIR$/test09/simple-types-spel" />
           </set>
         </option>
       </GradleProjectSettings>
