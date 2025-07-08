@@ -1,6 +1,6 @@
 # Project for testing SPRING 7.x and SPRING BOOT 4.x
 
-# test03 - Внедрение зависимостей через конструктор
+# test03 - Внедрение зависимостей через конструктор с помощью аннотаций
 
 Класс аннотируем 
 ```java
@@ -32,4 +32,27 @@ ConstructorConfusion cc = (ConstructorConfusion) ctx.getBean("constructorConfusi
 ```xml
     <context:component-scan
             base-package="juhnowski.test03"/>
+```
+
+# test04 - Внедрение зависимостей через конструктор с помощью xml
+
+Имеем класс с двумя конструкторами
+```java
+public ConstructorConfusion(String someValue) ...
+public ConstructorConfusion(int someValue) ...
+```
+
+В app-context-xml.xml прописываем бин с конструктором
+```xml
+    <bean id="constructorConfusion"
+          class="juhnowski.test04.ConstructorConfusion">
+    <constructor-arg type="int">
+        <value>90</value>
+    </constructor-arg>
+</bean>
+```
+
+Получаем компонент из контекста
+```java
+ConstructorConfusion cc = (ConstructorConfusion) ctx.getBean("constructorConfusion");
 ```
