@@ -13,6 +13,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/test01" />
             <option value="$PROJECT_DIR$/test01/hello-world" />
+            <option value="$PROJECT_DIR$/test02" />
+            <option value="$PROJECT_DIR$/test02/cdl" />
+            <option value="$PROJECT_DIR$/test03" />
+            <option value="$PROJECT_DIR$/test03/constructor-injection" />
+            <option value="$PROJECT_DIR$/test03/constructor-injection/annotated" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,6 +1,9 @@
 rootProject.name = 'test-spring-7'
 
 include 'test01:hello-world'
+include 'test02:cdl'
+include 'test03:constructor-injection'
+include 'test03:constructor-injection:annotated'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
@@ -10,3 +13,5 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
+
+
