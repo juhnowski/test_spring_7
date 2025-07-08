@@ -29,6 +29,8 @@
             <option value="$PROJECT_DIR$/test08/simple-types" />
             <option value="$PROJECT_DIR$/test09" />
             <option value="$PROJECT_DIR$/test09/simple-types-spel" />
+            <option value="$PROJECT_DIR$/test10" />
+            <option value="$PROJECT_DIR$/test10/inject-ref" />
           </set>
         </option>
       </GradleProjectSettings>

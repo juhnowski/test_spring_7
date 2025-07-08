@@ -9,6 +9,7 @@ include 'test06:setter-injection'
 include 'test07:bean-factory'
 include 'test08:simple-types'
 include 'test09:simple-types-spel'
+include 'test10:inject-ref'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
@@ -18,4 +19,3 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
-
