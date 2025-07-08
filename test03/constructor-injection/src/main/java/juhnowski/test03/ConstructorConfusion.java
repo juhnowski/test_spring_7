@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class ConstructorConfusion {
 
     private String someValue;
+
     @Autowired
     public ConstructorConfusion(String someValue) {
         System.out.println("ConstructorConfusion(String) called");

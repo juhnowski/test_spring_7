@@ -15,4 +15,6 @@
     <bean id="message" class="java.lang.String"
           c:_0="Test string"/>
 
+<!--    <bean id="message" class="java.lang.String"-->
+<!--          c:_0="надо закомментировать"/>-->
 </beans>
