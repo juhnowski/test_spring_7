@@ -56,3 +56,28 @@ public ConstructorConfusion(int someValue) ...
 ```java
 ConstructorConfusion cc = (ConstructorConfusion) ctx.getBean("constructorConfusion");
 ```
+
+# test05 - Внедрение зависимостей через конструктор с помощью xml
+
+Имеем класс, реализующий иннтерфейс
+```java
+ConfigurableMessageProvider implements MessageProvider...
+```
+
+с конструктором
+```java
+  public ConfigurableMessageProvider(String message) 
+```
+
+прописываем бин
+```xml
+<bean id="provider"
+          class="juhnowski.test05.ConfigurableMessageProvider"
+          c:message="I hope that someone gets my message in a bottle"/>
+```
+
+Извлекаем компонент из контекста
+```java
+MessageProvider messageProvider = ctx.getBean("provider",
+                MessageProvider.class);
+```

@@ -1,0 +1,9 @@
+jar {
+    manifest {
+        attributes(
+                "Created-By": "Ilya Juhnowski",
+                "Specification-Title": "Test Spring 7",
+                "Main-Class" : "juhnowski.test05.DeclareSpringComponents",
+        )
+    }
+}

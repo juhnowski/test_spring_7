@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/test03/constructor-injection" />
             <option value="$PROJECT_DIR$/test04" />
             <option value="$PROJECT_DIR$/test04/constructor-injection" />
+            <option value="$PROJECT_DIR$/test05" />
+            <option value="$PROJECT_DIR$/test05/constructor-injection" />
           </set>
         </option>
       </GradleProjectSettings>
