@@ -3,7 +3,9 @@ ext {
     bootVersion = '4.0.0-SNAPSHOT'
 
     spring = [
-            context: "org.springframework:spring-context:$springVersion"
+            context: "org.springframework:spring-context:$springVersion",
+            core: "org.springframework:spring-core:$springVersion",
+            beans: "org.springframework:spring-beans:$springVersion"
     ]
 
     boot = [

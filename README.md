@@ -1,11 +1,11 @@
 # Project for testing SPRING 7.x and SPRING BOOT 4.x
 
 # Поиск зависимостей
-# test02 - CDL
+## test02 - CDL
 Зависимый объект --> Поиск --> Контейнер
 ![test02.png](diagrams/test02.png)
 # Внедрение зависимостей
-# test03 - Внедрение зависимостей через конструктор с помощью аннотаций
+## test03 - Внедрение зависимостей через конструктор с помощью аннотаций
 
 Класс аннотируем 
 ```java
@@ -39,7 +39,7 @@ ConstructorConfusion cc = (ConstructorConfusion) ctx.getBean("constructorConfusi
             base-package="juhnowski.test03"/>
 ```
 
-# test04 - Внедрение зависимостей через конструктор с помощью xml
+## test04 - Внедрение зависимостей через конструктор с помощью xml
 
 Имеем класс с двумя конструкторами
 ```java
@@ -86,3 +86,40 @@ ConfigurableMessageProvider implements MessageProvider...
 MessageProvider messageProvider = ctx.getBean("provider",
                 MessageProvider.class);
 ```
+
+## test06 - внедрение зависимостей через сеттер
+Аннотируем класс
+```java
+@Service("renderer")
+public class StandardOutMessageRenderer implements MessageRenderer {
+```
+и в нем сеттер
+```java
+    @Autowired
+    public void setMessageProvider(MessageProvider provider) 
+```
+
+Создаем компонент для аргумента сеттера
+```java
+@Component("provider")
+public class HelloWorldMessageProvider implements MessageProvider
+```
+
+Прописываем сканирование компонентов для автосвязывания
+```java
+@ComponentScan(basePackages = {"juhnowski.test06"})
+@Configuration
+public class HelloWorldConfiguration { }
+```
+
+## test07 - фабрика
+
+используется класс DefaultListaЬleBean
+Factory в качестве одной из двух основных реализаций интерфейса BeanFactory,
+предоставляемых в Spring, а данные типа BeanDefinition читаются из ХМL-файла
+средствами класса XmlBeanDefinitionReader. Как только реализация интерфейса
+BeanFactory будет создана и сконфигурирована, компонент Spring Bean извлекается
+по его имени oracle, указанному в ХМL-файле конфигурации
+
+## test08 - встраивание простых типов
+Аннотация @Value

@@ -21,6 +21,12 @@
             <option value="$PROJECT_DIR$/test04/constructor-injection" />
             <option value="$PROJECT_DIR$/test05" />
             <option value="$PROJECT_DIR$/test05/constructor-injection" />
+            <option value="$PROJECT_DIR$/test06" />
+            <option value="$PROJECT_DIR$/test06/setter-injection" />
+            <option value="$PROJECT_DIR$/test07" />
+            <option value="$PROJECT_DIR$/test07/bean-factory" />
+            <option value="$PROJECT_DIR$/test08" />
+            <option value="$PROJECT_DIR$/test08/simple-types" />
           </set>
         </option>
       </GradleProjectSettings>
