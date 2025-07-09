@@ -161,3 +161,18 @@ Spring позволяет компонентам Spring Beans из порожд�
 в родительском контексте.
 
 Вызвать метод setParent() в порожденном контексте типа ApplicationContext
+```java
+        GenericXmlApplicationContext parent = new GenericXmlApplicationContext();
+        parent.load("classpath:spring/parent-context.xml");
+        parent.refresh();
+
+        GenericXmlApplicationContext child = new GenericXmlApplicationContext();
+        child.load("classpath:spring/child-context.xml");
+        child.setParent(parent);
+        child.refresh();
+```
+Если в дочернем контексте присутствует бин с тем же именем, что и в родительском, то атрибут bean в
+дескриторе <ref> надо заменить на <parent>
+```xml
+<ref parent="childTitle"/>
+```
