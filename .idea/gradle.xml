@@ -33,6 +33,10 @@
             <option value="$PROJECT_DIR$/test10/inject-ref" />
             <option value="$PROJECT_DIR$/test11" />
             <option value="$PROJECT_DIR$/test11/nesting" />
+            <option value="$PROJECT_DIR$/test12" />
+            <option value="$PROJECT_DIR$/test12/collection" />
+            <option value="$PROJECT_DIR$/test13" />
+            <option value="$PROJECT_DIR$/test13/collection" />
           </set>
         </option>
       </GradleProjectSettings>

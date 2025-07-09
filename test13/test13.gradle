@@ -1,0 +1,8 @@
+subprojects {
+    group 'juhnowski.test13'
+    apply plugin: 'java'
+
+    dependencies {
+        implementation spring.context
+    }
+}

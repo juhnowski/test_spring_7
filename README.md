@@ -176,3 +176,6 @@ Spring позволяет компонентам Spring Beans из порожд�
 ```xml
 <ref parent="childTitle"/>
 ```
+
+## test12 - annotated collection injection
+## test13 - xml collection injection

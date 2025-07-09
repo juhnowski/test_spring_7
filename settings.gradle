@@ -11,6 +11,8 @@ include 'test08:simple-types'
 include 'test09:simple-types-spel'
 include 'test10:inject-ref'
 include 'test11:nesting'
+include 'test12:collection'
+include 'test13:collection'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
@@ -20,4 +22,3 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
-
