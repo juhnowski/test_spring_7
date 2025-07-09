@@ -180,7 +180,7 @@ Spring позволяет компонентам Spring Beans из порожд�
 ## test12 - annotated collection injection
 ## test13 - xml collection injection
 
-## test14 - внедрение зависимостей через метод поиска
+## test14 - внедрение зависимостей через метод поиска и xml
 
 Неодиночный компонент
 ```java
@@ -243,6 +243,24 @@ System.out.println("[" + beanName + "]: Singer Instances the Same?  "
 ```declarative
 [abstractLookupBean]: Singer Instances the Same?  false
 100000 gets took 93 ms
+[standardLookupBean]: Singer Instances the Same?  true
+100000 gets took 0 ms
+```
+## test15 - - внедрение зависимостей через метод поиска и аннотации
+AbstractLookupDemoBean теперь не абстрактный:
+```java
+    @Lookup("singer")
+    public Singer getMySinger() {
+        return null; // This implementation will be overridden by dynamically generated subclass
+    }
+```
+и singer - имя компонента типа Singer.
+Переменную не объявляем, так как DI через метод
+
+Результат работы медленнее
+```declarative
+[abstractLookupBean]: Singer Instances the Same?  false
+100000 gets took 105 ms
 [standardLookupBean]: Singer Instances the Same?  true
 100000 gets took 0 ms
 ```

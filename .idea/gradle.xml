@@ -39,6 +39,8 @@
             <option value="$PROJECT_DIR$/test13/collection" />
             <option value="$PROJECT_DIR$/test14" />
             <option value="$PROJECT_DIR$/test14/method-injection" />
+            <option value="$PROJECT_DIR$/test15" />
+            <option value="$PROJECT_DIR$/test15/method-injection" />
           </set>
         </option>
       </GradleProjectSettings>
