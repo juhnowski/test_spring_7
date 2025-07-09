@@ -31,6 +31,8 @@
             <option value="$PROJECT_DIR$/test09/simple-types-spel" />
             <option value="$PROJECT_DIR$/test10" />
             <option value="$PROJECT_DIR$/test10/inject-ref" />
+            <option value="$PROJECT_DIR$/test11" />
+            <option value="$PROJECT_DIR$/test11/nesting" />
           </set>
         </option>
       </GradleProjectSettings>
