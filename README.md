@@ -1,4 +1,4 @@
-# Project for testing SPRING 7.x and SPRING BOOT 4.x
+# Project for testing SPRING 7.x and SPRING BOOT 4.x IoC and DI
 
 # Поиск зависимостей
 ## test02 - CDL
@@ -172,10 +172,77 @@ Spring позволяет компонентам Spring Beans из порожд�
         child.refresh();
 ```
 Если в дочернем контексте присутствует бин с тем же именем, что и в родительском, то атрибут bean в
-дескриторе <ref> надо заменить на <parent>
+дескрипторе <ref> надо заменить на <parent>
 ```xml
 <ref parent="childTitle"/>
 ```
 
 ## test12 - annotated collection injection
 ## test13 - xml collection injection
+
+## test14 - внедрение зависимостей через метод поиска
+
+Неодиночный компонент
+```java
+public class Singer {
+    private String lyric = "I played a quick game of chess with the salt and pepper shaker";
+
+    public void sing() {
+        System.out.println(lyric);
+    }
+}
+```
+
+Интерфейс 
+```java
+public interface DemoBean {
+    /**
+     * Если этот компонент с методом поиска, то метод выполняет конкретный поиск
+     * @return ссылка на экземпляр Singer
+     */
+    Singer getMySinger();
+    /**
+     * Действие этого метода зависит от класса Singer
+     */
+    void doSomething();
+}
+```
+для двух одиночных компонентов
+```java
+public class StandardLookupDemoBean implements DemoBean
+public abstract class AbstractLookupDemoBean implements DemoBean
+```
+
+Конфигурация в формате xml, извлекаем их
+```java
+GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+        ctx.load("classpath:spring/app-context-xml.xml");
+        ctx.refresh();
+```
+
+ссылки на них передаются методу displayInfo
+```java
+    displayInfo("abstractLookupBean", abstractBean);
+    displayInfo("standardLookupBean", standardBean);
+```
+В методе создаем две локальные переменные типа Singer
+```java
+        Singer singer1 = bean.getMySinger();
+        Singer singer2 = bean.getMySinger();
+```
+Выводим сообщение в консоль, что ссылки указывают на один и тот же объект
+```java
+System.out.println("[" + beanName + "]: Singer Instances the Same?  "
+                + (singer1 == singer2));
+```
+При каждом вызове метода getMySinger():
+- abstractLookupBean - при каждом вызове извлекается новый экземпляр типа Singer, так как метод абстрактный и каждый раз происходит внедрение  
+- standardLookupBean - один и тот же компонент, так как одиночный экземпляр типа Singer передается этому компоненту путем внедрения зависимостей через метод установки. Этот экземпляр сохраняется и возвращается при каждом вызове метода getMyySinger(), и поэтому обе ссылки должны совпадать.
+
+Результат работы:
+```declarative
+[abstractLookupBean]: Singer Instances the Same?  false
+100000 gets took 93 ms
+[standardLookupBean]: Singer Instances the Same?  true
+100000 gets took 0 ms
+```
