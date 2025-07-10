@@ -47,6 +47,8 @@
             <option value="$PROJECT_DIR$/test17/bean-aliases" />
             <option value="$PROJECT_DIR$/test18" />
             <option value="$PROJECT_DIR$/test18/bean-aliases-anotated" />
+            <option value="$PROJECT_DIR$/test19" />
+            <option value="$PROJECT_DIR$/test19/bean-instantiation-mode" />
           </set>
         </option>
       </GradleProjectSettings>

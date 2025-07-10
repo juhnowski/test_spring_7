@@ -346,3 +346,12 @@ public @interface Award {
     String[] prize() default {};
 }
 ```
+Аннотация для ненсинглтона
+```java
+@Scope("prototype")
+```
+xml:
+```xml
+<bean id="nonSingleton" class="juhnowski.test19.Singer"
+          scope="prototype" c:_0="John Mayer"/>
+```
