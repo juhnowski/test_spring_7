@@ -45,6 +45,8 @@
             <option value="$PROJECT_DIR$/test16/method-replacement" />
             <option value="$PROJECT_DIR$/test17" />
             <option value="$PROJECT_DIR$/test17/bean-aliases" />
+            <option value="$PROJECT_DIR$/test18" />
+            <option value="$PROJECT_DIR$/test18/bean-aliases-anotated" />
           </set>
         </option>
       </GradleProjectSettings>

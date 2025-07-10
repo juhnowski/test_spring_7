@@ -330,3 +330,19 @@ public interface MethodReplacer {
 ```
 
 ## test17 - naming xml
+
+## test18 annotated aliases
+Объявляем аннотацию
+```java
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Award {
+
+    @AliasFor("prize")
+    String[] value() default {};
+
+    @AliasFor("value")
+    String[] prize() default {};
+}
+```
