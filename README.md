@@ -264,3 +264,67 @@ AbstractLookupDemoBean теперь не абстрактный:
 [standardLookupBean]: Singer Instances the Same?  true
 100000 gets took 0 ms
 ```
+
+Можно полностью избавиться от xml LookupConfigDemo:
+```java
+    @Configuration
+    @ComponentScan(basePackages = {"juhnowski.test15"})
+    public static class LookupConfig {}
+```
+Вывести все компоненты:
+```java
+Arrays.stream(ctx.getBeanDefinitionNames()).forEach(s-> System.out.println(s));
+```
+
+```declarative
+org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+lookupConfigDemo.LookupConfig
+abstractLookupBean
+singer
+standardLookupBean
+```
+
+## test16 method-replacement
+Заменя метода достигается путем динамического создания подкласса, производного  
+от класса компонента Spring Bean. Применяя библиотеку CGLIВ, обращения к  
+заменяемому методу следует переадресовать другому компоненту Spring Bean, в котором  
+реализуется интерфейс MethodReplacer.
+
+Имеем два перегруженных метода:
+```java
+public class ReplacementTarget {
+    public String formatMessage(String msg) {
+        return "<h1>" + msg + "</h1>";
+    }
+
+    public String formatMessage(Object msg) {
+        return "<h1>" + msg + "</h1>";
+    }
+}
+```
+Можно заменить любой метод, сделаем замену formatMessage(String). 
+Для этого реализуем интерфейс MethodReplacer
+```java
+public interface MethodReplacer {
+
+	/**
+	 * Reimplement the given method.
+	 * @param obj the instance we're reimplementing the method for
+	 * @param method the method to reimplement
+	 * @param args arguments to the method
+	 * @return the return value for the method
+	 */
+	Object reimplement(Object obj, Method method, Object[] args) throws Throwable;
+}
+```
+В контексте подменяем метод
+```xml
+    <bean id="replacementTarget" class="juhnowski.test16.ReplacementTarget">
+        <replaced-method name="formatMessage" replacer="methodReplacer">
+            <arg-type>String</arg-type>
+        </replaced-method>
+    </bean>
+```

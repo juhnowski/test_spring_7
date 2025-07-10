@@ -15,6 +15,7 @@ include 'test12:collection'
 include 'test13:collection'
 include 'test14:method-injection'
 include 'test15:method-injection'
+include 'test16:method-replacement'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
