@@ -328,3 +328,5 @@ public interface MethodReplacer {
         </replaced-method>
     </bean>
 ```
+
+## test17 - naming xml

@@ -16,6 +16,7 @@ include 'test13:collection'
 include 'test14:method-injection'
 include 'test15:method-injection'
 include 'test16:method-replacement'
+include 'test17:bean-aliases'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
@@ -25,4 +26,5 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
+
 

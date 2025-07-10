@@ -43,6 +43,8 @@
             <option value="$PROJECT_DIR$/test15/method-injection" />
             <option value="$PROJECT_DIR$/test16" />
             <option value="$PROJECT_DIR$/test16/method-replacement" />
+            <option value="$PROJECT_DIR$/test17" />
+            <option value="$PROJECT_DIR$/test17/bean-aliases" />
           </set>
         </option>
       </GradleProjectSettings>
