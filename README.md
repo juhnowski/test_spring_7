@@ -369,3 +369,17 @@ xml:
 ```xml
 <bean id="johnMayer" class="com.apress.prospring5.ch3.annotated.Singer" depends-on="gopher"/>
 ```
+## test22  автосвязывание
+```xml
+    <bean id="fooOne" class="juhnowski.test22.Foo"/>
+    <bean id="barOne" class="juhnowski.test22.Bar"/>
+
+    <bean id="targetByName" autowire="byName" class="juhnowski.test22.Target"
+          lazy-init="true"/>
+
+    <bean id="targetByType" autowire="byType" class="juhnowski.test22.Target"
+          lazy-init="true"/>
+
+    <bean id="targetConstructor" autowire="constructor"
+          class="juhnowski.test22.Target" lazy-init="true"/>
+```

@@ -21,6 +21,7 @@ include 'test18:bean-aliases-anotated'
 include 'test19:bean-instantiation-mode'
 include 'test20:bean-autowiring'
 include 'test21:bean-autowiring-xml'
+include 'test22:autowiring-types'
 
 println('This project just for fun test Spring framework 7.x and Spring Boot 4.x ')
 
@@ -30,5 +31,4 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
-
 

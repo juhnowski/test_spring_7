@@ -53,6 +53,8 @@
             <option value="$PROJECT_DIR$/test20/bean-autowiring" />
             <option value="$PROJECT_DIR$/test21" />
             <option value="$PROJECT_DIR$/test21/bean-autowiring-xml" />
+            <option value="$PROJECT_DIR$/test22" />
+            <option value="$PROJECT_DIR$/test22/autowiring-types" />
           </set>
         </option>
       </GradleProjectSettings>
