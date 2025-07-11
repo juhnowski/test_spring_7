@@ -49,6 +49,10 @@
             <option value="$PROJECT_DIR$/test18/bean-aliases-anotated" />
             <option value="$PROJECT_DIR$/test19" />
             <option value="$PROJECT_DIR$/test19/bean-instantiation-mode" />
+            <option value="$PROJECT_DIR$/test20" />
+            <option value="$PROJECT_DIR$/test20/bean-autowiring" />
+            <option value="$PROJECT_DIR$/test21" />
+            <option value="$PROJECT_DIR$/test21/bean-autowiring-xml" />
           </set>
         </option>
       </GradleProjectSettings>

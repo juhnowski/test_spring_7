@@ -345,6 +345,8 @@ public @interface Award {
     @AliasFor("value")
     String[] prize() default {};
 }
+
+## test19 depends
 ```
 Аннотация для ненсинглтона
 ```java
@@ -354,4 +356,16 @@ xml:
 ```xml
 <bean id="nonSingleton" class="juhnowski.test19.Singer"
           scope="prototype" c:_0="John Mayer"/>
+```
+
+## test20
+Зависимость аннотация
+```java
+@Component("johnMayer")
+@DependsOn("gopher")
+```
+
+## test21 dependings xml
+```xml
+<bean id="johnMayer" class="com.apress.prospring5.ch3.annotated.Singer" depends-on="gopher"/>
 ```
